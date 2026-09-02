@@ -1,0 +1,431 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <radialGradient id="bg-grad" cx="40%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#1a6b6b" />
+      <stop offset="60%" stop-color="#0d1b2a" />
+      <stop offset="100%" stop-color="#050a10" />
+    </radialGradient>
+    
+    <radialGradient id="screen-bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#2d9b9b" />
+      <stop offset="100%" stop-color="#0a1520" />
+    </radialGradient>
+
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5d47a" />
+      <stop offset="100%" stop-color="#d4a843" />
+    </linearGradient>
+
+    <linearGradient id="desk-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(45, 155, 155, 0.2)" />
+      <stop offset="50%" stop-color="rgba(26, 107, 107, 0.1)" />
+      <stop offset="100%" stop-color="rgba(13, 27, 42, 0.3)" />
+    </linearGradient>
+
+    <radialGradient id="vignette-grad" cx="50%" cy="50%" r="75%">
+      <stop offset="50%" stop-color="#000" stop-opacity="0" />
+      <stop offset="100%" stop-color="#000" stop-opacity="0.7" />
+    </radialGradient>
+
+    <!-- Glow Filters -->
+    <filter id="glow-sm" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glow-md" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur1" />
+      <feGaussianBlur stdDeviation="15" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glow-lg" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="20" result="blur1" />
+      <feGaussianBlur stdDeviation="40" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Screen Clip Path -->
+    <clipPath id="screen-clip">
+      <rect x="0" y="0" width="260" height="200" rx="4" />
+    </clipPath>
+
+    <!-- Grid Pattern -->
+    <pattern id="bg-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(45, 155, 155, 0.05)" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <style><![CDATA[
+/* CSS Animations */
+    .pulse-glow {
+      animation: pulseGlow 4s ease-in-out infinite alternate;
+      transform-origin: 350px 265px;
+    }
+    @keyframes pulseGlow {
+      0% { opacity: 0.3; transform: scale(0.98); }
+      100% { opacity: 0.7; transform: scale(1.03); }
+    }
+
+    .float-slow {
+      animation: float 6s ease-in-out infinite alternate;
+    }
+    .float-med {
+      animation: float 4s ease-in-out infinite alternate;
+    }
+    .float-fast {
+      animation: float 3s ease-in-out infinite alternate;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-15px); }
+    }
+
+    .data-flow {
+      animation: flow 2s linear infinite;
+    }
+    .data-flow-reverse {
+      animation: flowRev 3s linear infinite;
+    }
+    @keyframes flow {
+      to { stroke-dashoffset: -24; }
+    }
+    @keyframes flowRev {
+      to { stroke-dashoffset: 24; }
+    }
+
+    .wave {
+      transform-origin: 50% 180px;
+      animation: pulseWave 0.6s ease-in-out infinite alternate;
+    }
+    .wave-2 { animation-delay: 0.2s; animation-duration: 0.5s; }
+    .wave-3 { animation-delay: 0.4s; animation-duration: 0.7s; }
+    .wave-4 { animation-delay: 0.1s; animation-duration: 0.4s; }
+    @keyframes pulseWave {
+      0% { transform: scaleY(0.2); }
+      100% { transform: scaleY(1); }
+    }
+
+    .particle {
+      animation: floatUp 12s linear infinite;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(0.8); opacity: 0; }
+      20% { opacity: 0.8; }
+      80% { opacity: 0.8; }
+      100% { transform: translateY(-150px) scale(1.2); opacity: 0; }
+    }
+
+    .blink {
+      animation: blinkAnim 2s infinite;
+    }
+    @keyframes blinkAnim {
+      0%, 48%, 52%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+]]></style>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bg-grad)" />
+  <rect width="1200" height="800" fill="url(#bg-grid)" />
+
+  <!-- Ambient Particles -->
+  <g class="particles">
+    <circle cx="200" cy="600" r="3" fill="#2d9b9b" class="particle" style="animation-delay: 0s;" filter="url(#glow-sm)"/>
+    <circle cx="850" cy="700" r="4" fill="#d4a843" class="particle" style="animation-delay: -3s;" filter="url(#glow-sm)"/>
+    <circle cx="400" cy="750" r="2" fill="#1a6b6b" class="particle" style="animation-delay: -6s;"/>
+    <circle cx="1000" cy="400" r="3" fill="#2d9b9b" class="particle" style="animation-delay: -2s;" filter="url(#glow-sm)"/>
+    <circle cx="150" cy="300" r="5" fill="#d4a843" class="particle" style="animation-delay: -8s; animation-duration: 15s;" filter="url(#glow-sm)"/>
+    <circle cx="600" cy="650" r="2" fill="#4fd1d1" class="particle" style="animation-delay: -1s;"/>
+    <circle cx="750" cy="250" r="4" fill="#2d9b9b" class="particle" style="animation-delay: -5s; animation-duration: 10s;" filter="url(#glow-sm)"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- DESK LAYER (Isometric Top Plane)           -->
+  <!-- Origin: 500, 200 | W: 600, H: 500          -->
+  <!-- ========================================== -->
+  <g id="desk">
+    <!-- Desk Thickness (Left Side) -->
+    <polygon points="67,450 586.6,750 586.6,780 67,480" fill="#050a10" stroke="#1a6b6b" stroke-width="1" />
+    <!-- Desk Thickness (Right Side) -->
+    <polygon points="586.6,750 1019.6,500 1019.6,530 586.6,780" fill="#0a1520" stroke="#1a6b6b" stroke-width="1" />
+    
+    <!-- Desk Top Surface -->
+    <polygon points="500,200 1019.6,500 586.6,750 67,450" fill="url(#desk-grad)" stroke="#2d9b9b" stroke-width="2" />
+    
+    <!-- Isometric Grid on Desk -->
+    <g transform="matrix(0.866, 0.5, -0.866, 0.5, 500, 200)" stroke="rgba(45, 155, 155, 0.15)" stroke-width="2">
+      <!-- X lines -->
+      <path d="M 0,100 L 600,100 M 0,200 L 600,200 M 0,300 L 600,300 M 0,400 L 600,400" />
+      <!-- Y lines -->
+      <path d="M 100,0 L 100,500 M 200,0 L 200,500 M 300,0 L 300,500 M 400,0 L 400,500 M 500,0 L 500,500" />
+      
+      <!-- Laptop Base Shadow/Glow -->
+      <rect x="70" y="110" width="220" height="280" rx="15" fill="#2d9b9b" filter="url(#glow-md)" opacity="0.4" />
+      
+      <!-- Laptop Base -->
+      <rect x="80" y="120" width="200" height="260" rx="10" fill="#0a1520" stroke="#1a6b6b" stroke-width="2" />
+      <!-- Keyboard Area -->
+      <rect x="95" y="135" width="130" height="230" rx="6" fill="#050a10" stroke="#112233" stroke-width="1" />
+      <!-- Keyboard Keys (Stylized Lines) -->
+      <path d="M 105,145 L 215,145 M 105,160 L 215,160 M 105,175 L 215,175 M 105,190 L 215,190 M 105,205 L 215,205 M 105,220 L 215,220 M 105,235 L 215,235 M 105,250 L 215,250 M 105,265 L 215,265 M 105,280 L 215,280 M 105,295 L 215,295 M 105,310 L 215,310 M 105,325 L 215,325 M 105,340 L 215,340" stroke="#1a2b3c" stroke-width="4" stroke-dasharray="10 4 20 4 15 4" />
+      <!-- Trackpad -->
+      <rect x="240" y="210" width="30" height="80" rx="4" fill="#0d1b2a" stroke="#1a2b3c" stroke-width="1" />
+    </g>
+
+    <!-- Coffee Cup / Plant (Isometric Cylinder) -->
+    <g transform="translate(0, -10)">
+      <ellipse cx="760" cy="450" rx="16" ry="8" fill="#050a10" />
+      <path d="M 744 430 L 744 450 A 16 8 0 0 0 776 450 L 776 430 Z" fill="#1a6b6b" />
+      <ellipse cx="760" cy="430" rx="16" ry="8" fill="#2d9b9b" />
+      <ellipse cx="760" cy="430" rx="12" ry="6" fill="#0a1520" />
+      <!-- Steam -->
+      <path d="M 755 420 Q 750 400 760 390 T 755 360" stroke="#d4a843" stroke-width="2" fill="none" class="float-slow" opacity="0.6" filter="url(#glow-sm)"/>
+      <path d="M 765 425 Q 770 410 760 400 T 765 375" stroke="#2d9b9b" stroke-width="1.5" fill="none" class="float-med" opacity="0.5" filter="url(#glow-sm)"/>
+    </g>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- DATA FLOW LINES                            -->
+  <!-- ========================================== -->
+  <g id="data-flow-lines">
+    <!-- From Laptop to Client -->
+    <path d="M 422 405 Q 550 320 710 490" stroke="#d4a843" stroke-width="3" fill="none" stroke-dasharray="12 12" class="data-flow" filter="url(#glow-sm)" opacity="0.8" />
+    <path d="M 465 300 Q 620 220 730 430" stroke="#2d9b9b" stroke-width="2" fill="none" stroke-dasharray="8 16" class="data-flow-reverse" filter="url(#glow-sm)" opacity="0.6" />
+    <path d="M 350 360 Q 500 450 680 580" stroke="#4fd1d1" stroke-width="1.5" fill="none" stroke-dasharray="20 10" class="data-flow" filter="url(#glow-sm)" opacity="0.4" />
+  </g>
+
+  <!-- ========================================== -->
+  <!-- LAPTOP SCREEN GLOW                         -->
+  <!-- ========================================== -->
+  <!-- Screen Corners: (465.4,100), (240.2,230), (240.2,430), (465.4,300) -->
+  <polygon points="465.4,100 240.2,230 240.2,430 465.4,300" fill="#2d9b9b" filter="url(#glow-lg)" class="pulse-glow" />
+  <polygon points="465.4,100 240.2,230 240.2,430 465.4,300" fill="#d4a843" filter="url(#glow-md)" class="pulse-glow" style="animation-delay: -2s;" opacity="0.5" />
+
+  <!-- ========================================== -->
+  <!-- LAPTOP SCREEN (Left Plane)                 -->
+  <!-- Transform: matrix(-0.866, 0.5, 0, 1, 465.4, 100) -->
+  <!-- W: 260, H: 200                             -->
+  <!-- ========================================== -->
+  <g id="laptop-screen" transform="matrix(-0.866, 0.5, 0, 1, 465.4, 100)">
+    <!-- Screen Bezel -->
+    <rect x="-12" y="-12" width="284" height="224" rx="12" fill="#050a10" stroke="#1a6b6b" stroke-width="3" />
+    <rect x="-6" y="-6" width="272" height="212" rx="6" fill="#0a1520" />
+    
+    <!-- Screen Content Group -->
+    <g clip-path="url(#screen-clip)">
+      <!-- Screen Background -->
+      <rect x="0" y="0" width="260" height="200" fill="url(#screen-bg)" />
+      
+      <!-- Digital Grid Overlay -->
+      <g stroke="rgba(45, 155, 155, 0.1)" stroke-width="1">
+        <path d="M 0,40 L 260,40 M 0,80 L 260,80 M 0,120 L 260,120 M 0,160 L 260,160" />
+        <path d="M 52,0 L 52,200 M 104,0 L 104,200 M 156,0 L 156,200 M 208,0 L 208,200" />
+      </g>
+
+      <!-- ========================================== -->
+      <!-- THE COACH (RENNY)                          -->
+      <!-- ========================================== -->
+      <g id="coach-renny">
+        <!-- Shoulders & Torso -->
+        <path d="M 20 200 C 20 120, 70 90, 130 90 C 190 90, 240 120, 240 200 Z" fill="#0a0705" />
+        
+        <!-- Neck -->
+        <path d="M 110 90 L 110 110 L 150 110 L 150 90 Z" fill="#0a0705" />
+        
+        <!-- Head / Face Silhouette -->
+        <path d="M 130 15 C 100 15, 85 40, 85 65 C 85 85, 95 100, 110 110 L 110 120 L 150 120 L 150 110 C 165 100, 175 85, 175 65 C 175 40, 160 15, 130 15 Z" fill="#0a0705" />
+        
+        <!-- Ears -->
+        <path d="M 85 55 C 80 55, 78 65, 85 70 Z" fill="#0a0705" />
+        <path d="M 175 55 C 180 55, 182 65, 175 70 Z" fill="#0a0705" />
+
+        <!-- Hand Gesturing (Coaching) -->
+        <path d="M 180 200 C 170 170, 185 140, 200 130 C 210 120, 225 125, 220 145 C 225 135, 235 140, 230 155 C 235 150, 245 155, 240 170 L 220 200 Z" fill="#0a0705" />
+
+        <!-- HIGHLIGHTS (Warm Gold & Teal) -->
+        <!-- Left Rim Light (Gold) -->
+        <g filter="url(#glow-sm)">
+          <path d="M 20 200 C 20 120, 70 90, 130 90" stroke="#d4a843" stroke-width="3" stroke-linecap="round" fill="none" />
+          <path d="M 85 65 C 85 85, 95 100, 110 110 L 110 120" stroke="#d4a843" stroke-width="2.5" stroke-linecap="round" fill="none" />
+          <path d="M 130 15 C 100 15, 85 40, 85 65" stroke="#d4a843" stroke-width="2" stroke-linecap="round" fill="none" />
+        </g>
+        
+        <!-- Right Rim Light (Teal) -->
+        <g filter="url(#glow-sm)">
+          <path d="M 130 90 C 190 90, 240 120, 240 200" stroke="#2d9b9b" stroke-width="3" stroke-linecap="round" fill="none" />
+          <path d="M 175 65 C 175 85, 165 100, 150 110 L 150 120" stroke="#2d9b9b" stroke-width="2.5" stroke-linecap="round" fill="none" />
+          <path d="M 130 15 C 160 15, 175 40, 175 65" stroke="#2d9b9b" stroke-width="2" stroke-linecap="round" fill="none" />
+          <!-- Hand Highlight -->
+          <path d="M 200 130 C 210 120, 225 125, 220 145" stroke="#4fd1d1" stroke-width="2" stroke-linecap="round" fill="none" />
+        </g>
+
+        <!-- Subtle Facial Structure Lines -->
+        <path d="M 100 65 Q 115 75 130 75 Q 145 75 160 65" stroke="#d4a843" stroke-width="1" fill="none" opacity="0.4" />
+        <path d="M 115 95 Q 130 105 145 95" stroke="#d4a843" stroke-width="1" fill="none" opacity="0.4" />
+      </g>
+
+      <!-- ========================================== -->
+      <!-- SCREEN UI OVERLAYS                         -->
+      <!-- ========================================== -->
+      <!-- Video Frame Border -->
+      <rect x="8" y="8" width="244" height="184" rx="6" fill="none" stroke="#2d9b9b" stroke-width="1.5" opacity="0.7" />
+      
+      <!-- Top Left: Live Badge -->
+      <rect x="16" y="16" width="54" height="20" rx="10" fill="#d4a843" />
+      <circle cx="26" cy="26" r="4" fill="#050a10" class="blink" />
+      <text x="36" y="30" fill="#050a10" font-family="sans-serif" font-size="10" font-weight="bold" letter-spacing="0.5">LIVE</text>
+
+      <!-- Bottom Bar -->
+      <rect x="8" y="160" width="244" height="32" fill="rgba(5, 10, 16, 0.8)" />
+      
+      <!-- Name Tag -->
+      <text x="20" y="181" fill="#f5d47a" font-family="sans-serif" font-size="12" font-weight="bold">Coach Renny</text>
+      
+      <!-- Audio Waveform -->
+      <g fill="#4fd1d1">
+        <rect x="110" y="166" width="3" height="20" rx="1.5" class="wave wave-1" />
+        <rect x="116" y="166" width="3" height="20" rx="1.5" class="wave wave-2" />
+        <rect x="122" y="166" width="3" height="20" rx="1.5" class="wave wave-3" />
+        <rect x="128" y="166" width="3" height="20" rx="1.5" class="wave wave-4" />
+      </g>
+
+      <!-- Call Controls -->
+      <circle cx="180" cy="176" r="10" fill="#1a6b6b" />
+      <path d="M 177 174 L 183 174 M 180 171 L 180 177" stroke="#fff" stroke-width="2" stroke-linecap="round" /> <!-- Mic Icon Placeholder -->
+      
+      <circle cx="205" cy="176" r="10" fill="#1a6b6b" />
+      <rect x="200" y="172" width="10" height="8" rx="2" fill="none" stroke="#fff" stroke-width="1.5" /> <!-- Cam Icon Placeholder -->
+      
+      <circle cx="230" cy="176" r="10" fill="#c93a3a" />
+      <path d="M 226 176 C 226 174, 234 174, 234 176" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none" /> <!-- End Call Icon -->
+    </g>
+    
+    <!-- Screen Glare -->
+    <path d="M 0 0 L 150 0 L 0 150 Z" fill="url(#gold-grad)" opacity="0.05" clip-path="url(#screen-clip)" />
+  </g>
+
+  <!-- ========================================== -->
+  <!-- THE CLIENT (Right Side)                    -->
+  <!-- ========================================== -->
+  <g id="client">
+    <!-- Chair Base & Back -->
+    <path d="M 780 720 L 810 550 L 760 520 L 730 690 Z" fill="#050a10" stroke="#1a6b6b" stroke-width="2" />
+    <path d="M 760 520 C 780 480, 800 490, 810 550" fill="#0a1520" />
+
+    <!-- Client Torso -->
+    <path d="M 760 640 C 780 550, 750 470, 710 470 C 670 470, 660 550, 680 640 Z" fill="#0d1b2a" />
+    
+    <!-- Client Head -->
+    <circle cx="700" cy="420" r="38" fill="#0a1520" />
+    <!-- Hair/Styling -->
+    <path d="M 665 400 C 680 370, 720 370, 735 400 C 740 430, 720 460, 700 460 C 680 460, 660 430, 665 400 Z" fill="#050a10" />
+
+    <!-- Client Left Arm (Reaching to Desk) -->
+    <path d="M 700 480 C 650 510, 580 480, 480 420" stroke="#0d1b2a" stroke-width="22" stroke-linecap="round" fill="none" />
+    <path d="M 700 480 C 650 510, 580 480, 480 420" stroke="#1a6b6b" stroke-width="18" stroke-linecap="round" fill="none" />
+    
+    <!-- Client Right Arm (Resting) -->
+    <path d="M 740 490 C 760 530, 750 580, 720 600" stroke="#0a1520" stroke-width="20" stroke-linecap="round" fill="none" />
+
+    <!-- HIGHLIGHTS ON CLIENT (From Screen Glow) -->
+    <!-- Screen is Up-Left, so highlights are on the top-left edges -->
+    <g filter="url(#glow-sm)">
+      <!-- Head Highlight -->
+      <path d="M 665 400 C 660 420, 665 440, 680 455" stroke="#d4a843" stroke-width="3" stroke-linecap="round" fill="none" />
+      <path d="M 675 385 C 685 380, 695 380, 705 385" stroke="#2d9b9b" stroke-width="2" stroke-linecap="round" fill="none" />
+      
+      <!-- Torso Highlight -->
+      <path d="M 670 480 C 655 520, 660 580, 680 630" stroke="#d4a843" stroke-width="3" stroke-linecap="round" fill="none" />
+      
+      <!-- Arm Highlight -->
+      <path d="M 695 475 C 645 505, 575 475, 475 415" stroke="#4fd1d1" stroke-width="3" stroke-linecap="round" fill="none" />
+    </g>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- FLOATING UI PANELS                         -->
+  <!-- ========================================== -->
+  
+  <!-- Panel 1: Chat/Messages (Left Side, facing Client) -->
+  <!-- Transform: Right Plane facing left-down -->
+  <g class="float-slow" transform="matrix(0.866, -0.5, 0, 1, 200, 450)">
+    <rect x="0" y="0" width="160" height="220" rx="12" fill="rgba(13, 27, 42, 0.85)" stroke="#2d9b9b" stroke-width="1.5" filter="url(#glow-sm)" />
+    
+    <!-- Header -->
+    <rect x="0" y="0" width="160" height="40" rx="12" fill="rgba(26, 107, 107, 0.5)" />
+    <text x="20" y="25" fill="#4fd1d1" font-family="sans-serif" font-size="14" font-weight="bold">Session Chat</text>
+    
+    <!-- Chat Bubbles -->
+    <rect x="15" y="60" width="100" height="30" rx="15" fill="#1a6b6b" />
+    <path d="M 25 75 L 85 75" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity="0.5" />
+    
+    <rect x="45" y="105" width="100" height="30" rx="15" fill="#d4a843" />
+    <path d="M 55 120 L 115 120" stroke="#050a10" stroke-width="3" stroke-linecap="round" opacity="0.7" />
+    
+    <rect x="15" y="150" width="80" height="30" rx="15" fill="#1a6b6b" />
+    <path d="M 25 165 L 65 165" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity="0.5" />
+    
+    <!-- Input Box -->
+    <rect x="15" y="190" width="130" height="20" rx="10" fill="#050a10" stroke="#2d9b9b" stroke-width="1" />
+  </g>
+
+  <!-- Panel 2: Stats/Goals (Right Side, facing right-down) -->
+  <!-- Transform: Left Plane facing right-down -->
+  <g class="float-med" transform="matrix(-0.866, 0.5, 0, 1, 1050, 150)">
+    <rect x="0" y="0" width="180" height="150" rx="12" fill="rgba(13, 27, 42, 0.85)" stroke="#d4a843" stroke-width="1.5" filter="url(#glow-sm)" />
+    
+    <!-- Radial Progress Charts -->
+    <circle cx="50" cy="75" r="30" fill="none" stroke="#1a6b6b" stroke-width="6" />
+    <circle cx="50" cy="75" r="30" fill="none" stroke="#4fd1d1" stroke-width="6" stroke-dasharray="130 188" stroke-linecap="round" />
+    
+    <circle cx="50" cy="75" r="18" fill="none" stroke="#0a1520" stroke-width="4" />
+    <circle cx="50" cy="75" r="18" fill="none" stroke="#d4a843" stroke-width="4" stroke-dasharray="70 113" stroke-linecap="round" />
+    
+    <!-- Goal Bars -->
+    <text x="100" y="40" fill="#f5d47a" font-family="sans-serif" font-size="12" font-weight="bold">Milestones</text>
+    
+    <rect x="100" y="55" width="60" height="8" rx="4" fill="#050a10" />
+    <rect x="100" y="55" width="45" height="8" rx="4" fill="#4fd1d1" />
+    
+    <rect x="100" y="75" width="60" height="8" rx="4" fill="#050a10" />
+    <rect x="100" y="75" width="30" height="8" rx="4" fill="#d4a843" />
+    
+    <rect x="100" y="95" width="60" height="8" rx="4" fill="#050a10" />
+    <rect x="100" y="95" width="55" height="8" rx="4" fill="#4fd1d1" />
+  </g>
+
+  <!-- Panel 3: Small Notification (Top Center) -->
+  <g class="float-fast" transform="matrix(0.866, 0.5, -0.866, 0.5, 650, 50)">
+    <rect x="0" y="0" width="120" height="40" rx="8" fill="rgba(45, 155, 155, 0.9)" filter="url(#glow-sm)" />
+    <circle cx="20" cy="20" r="10" fill="#d4a843" />
+    <path d="M 16 20 L 19 23 L 25 16" stroke="#050a10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <text x="40" y="24" fill="#050a10" font-family="sans-serif" font-size="10" font-weight="bold">Goal Reached!</text>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- FOREGROUND PARTICLES & ATMOSPHERE          -->
+  <!-- ========================================== -->
+  <g class="particles">
+    <circle cx="500" cy="300" r="6" fill="#d4a843" class="particle" style="animation-delay: -4s; animation-duration: 8s;" filter="url(#glow-md)"/>
+    <circle cx="700" cy="500" r="4" fill="#4fd1d1" class="particle" style="animation-delay: -7s; animation-duration: 11s;" filter="url(#glow-sm)"/>
+    <circle cx="300" cy="450" r="5" fill="#2d9b9b" class="particle" style="animation-delay: -1s; animation-duration: 9s;" filter="url(#glow-sm)"/>
+    <circle cx="900" cy="200" r="7" fill="#f5d47a" class="particle" style="animation-delay: -9s; animation-duration: 14s;" filter="url(#glow-md)"/>
+  </g>
+
+  <!-- Subtle Vignette Overlay -->
+  <rect width="1200" height="800" fill="url(#vignette-grad)" pointer-events="none" />
+
+</svg>

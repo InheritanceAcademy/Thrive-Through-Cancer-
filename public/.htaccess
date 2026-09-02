@@ -1,0 +1,26 @@
+DirectoryIndex index.html index.php
+
+<IfModule mod_headers.c>
+Header always set Strict-Transport-Security "max-age=31536000"
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "DENY"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://img.rocket.new https://images.unsplash.com; font-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^www\.thrivethroughcancer\.co\.za$ [NC]
+RewriteRule ^(.*)$ https://thrivethroughcancer.co.za/$1 [R=301,L]
+
+RewriteRule ^(wp-admin|wp-content|wp-includes|wp-login\.php|wp-json|xmlrpc\.php)(/.*)?$ - [F,L]
+RewriteRule \.(zip|tar|gz|sql|bak|old|log|map)$ - [F,L]
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+RewriteRule ^.*$ /404.html [L]
+</IfModule>
