@@ -52,7 +52,7 @@ jobs:
           username: ${{ env.CPANEL_FTP_USERNAME }}
           password: ${{ env.CPANEL_FTP_PASSWORD }}
           local-dir: ./out/
-          server-dir: /public_html/thrivethroughcancer.co.za/
+          server-dir: /
           exclude: |
             **/.git*
             **/.git*/**
