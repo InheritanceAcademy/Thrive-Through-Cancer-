@@ -71,13 +71,15 @@ export default function HeroSection() {
       
       {/* Full-bleed background image */}
       <div className="absolute inset-0 z-0">
-        <AppImage
-          src="/assets/images/image-1786145790657.png"
-          alt="Bridge through a lush forest path, symbolizing a journey toward healing and hope"
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw" />
+        <div className="hidden md:block absolute inset-0">
+          <AppImage
+            src="/assets/images/image-1786145790657.png"
+            alt="Bridge through a lush forest path, symbolizing a journey toward healing and hope"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw" />
+        </div>
         
         {/* Scrim overlay — dark enough for white text contrast */}
         <div className="absolute inset-0 hero-scrim" />
