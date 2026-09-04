@@ -268,7 +268,7 @@ export default function ServicesPage() {
               <Icon name="HeartIcon" size={18} className="text-primary flex-shrink-0 mt-0.5" />
               <p className="text-sm text-foreground/80 font-light leading-relaxed">
                 Fees are in Rands (ZAR) and US Dollars ($). South African/African citizens are charged in Rands (ZAR) and all other countries in USD ($).{' '}
-                We recognize that finances may be one of your concerns on a cancer journey. Do not make financial hardship a barrier to your recovery — speak to us about our{' '}
+                We recognise that finances may be one of your concerns on a cancer journey. Do not make financial hardship a barrier to your recovery — speak to us about our{' '}
                 <span className="font-semibold text-primary">&ldquo;Pay What You Can Afford&rdquo;</span> offer. Our goal is to help all in need of our services.
               </p>
             </div>

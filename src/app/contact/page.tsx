@@ -360,7 +360,7 @@ export default function ContactPage() {
 
               {/* Contact details */}
               <ul className="space-y-5" aria-label="Contact information">
-                {/* Email .com */}
+                {/* Email */}
                 <li className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <Icon name="EnvelopeIcon" size={18} className="text-primary" />

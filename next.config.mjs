@@ -17,20 +17,6 @@ const nextConfig = {
     minimumCacheTTL: 60,
     qualities: [75, 85, 100],
     unoptimized: true,
-  },
-
-  webpack(config, { dev }) {
-if (dev) {
-    config.module.rules.push({
-      test: /\.(jsx|tsx)$/,
-      exclude: [/node_modules/],
-      use: [{
-        loader: '@dhiwise/component-tagger/nextLoader',
-      }],
-    });
-  }
-
-    return config;
   }
 };
 export default nextConfig;

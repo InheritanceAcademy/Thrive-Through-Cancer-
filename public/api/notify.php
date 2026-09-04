@@ -5,8 +5,8 @@ header('Content-Type: application/json');
 
 const MAX_BODY_BYTES = 20000;
 const SITE_URL = 'https://thrivethroughcancer.co.za';
-const OWNER_EMAIL = 'coaching@thrivethroughcancer.co.za';
-const FROM_EMAIL = 'coaching@thrivethroughcancer.co.za';
+const OWNER_EMAIL = 'hello@thrivethroughcancer.co.za';
+const FROM_EMAIL = 'hello@thrivethroughcancer.co.za';
 
 $sessionLabels = [
     'discovery' => 'Discovery Chemistry WhatsApp Call (Free, 10 min)',
