@@ -85,7 +85,7 @@ export default function AboutSection() {
     <section
       id="about"
       ref={sectionRef}
-      className="py-24 md:py-32 px-6 md:px-10 border-t border-border"
+      className="py-24 md:py-32 px-6 md:px-10 border-t border-border overflow-hidden"
       aria-labelledby="about-heading">
       
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">

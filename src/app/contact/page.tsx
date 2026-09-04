@@ -177,7 +177,7 @@ function TimezoneConverter() {
       </div>
 
       <p className="text-xs text-muted-foreground font-light leading-relaxed">
-        These hours are designed to reach across time zones — covering Europe, morning hours across Asia, and early morning on the US East Coast.
+        These hours are designed to reach across time zones — covering Europe, afternoon and evening across Asia and Australia/New Zealand, and early morning on the US East Coast.
       </p>
     </div>
   );
@@ -381,6 +381,14 @@ export default function ContactPage() {
                   <div>
                     <p className="text-xs text-muted-foreground font-semibold tracking-wide uppercase mb-0.5">WhatsApp Messaging</p>
                     <p className="text-foreground text-sm font-medium">International clients welcome</p>
+                    <a
+                      href="https://wa.me/27713519581"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-foreground text-sm font-semibold hover:text-primary transition-colors block mt-1"
+                    >
+                      +27 71 351 9581
+                    </a>
                     <p className="text-xs text-muted-foreground font-light mt-0.5 leading-relaxed">
                       We use WhatsApp messaging to connect across borders — no international call charges, no pressure. Message us whenever you&apos;re ready.
                     </p>
@@ -679,7 +687,7 @@ export default function ContactPage() {
                         checked={form.consent}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        className={`mt-1 w-4 h-4 accent-primary flex-shrink-0 cursor-pointer ${touched.consent && errors.consent ? 'outline outline-2 outline-red-500 rounded' : ''}`}
+                        className={`mt-0.5 w-6 h-6 accent-primary flex-shrink-0 cursor-pointer ${touched.consent && errors.consent ? 'outline outline-2 outline-red-500 rounded' : ''}`}
                         aria-invalid={touched.consent && !!errors.consent}
                         aria-describedby={touched.consent && errors.consent ? 'consent-error' : undefined}
                       />

@@ -232,7 +232,7 @@ export default function FAQPage() {
             <div className="flex flex-wrap gap-3 justify-center">
               <button
                 onClick={() => setActiveCategory('all')}
-                className={`px-5 py-2 rounded-full text-sm font-semibold border transition-all duration-200 ${
+                className={`min-h-11 px-5 py-2 rounded-full text-sm font-semibold border transition-all duration-200 ${
                   activeCategory === 'all' ?'bg-primary text-background border-primary' :'border-border text-muted-foreground hover:border-primary/50 hover:text-foreground bg-surface/40'
                 }`}
               >
@@ -242,7 +242,7 @@ export default function FAQPage() {
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`px-5 py-2 rounded-full text-sm font-semibold border transition-all duration-200 flex items-center gap-2 ${
+                  className={`min-h-11 px-5 py-2 rounded-full text-sm font-semibold border transition-all duration-200 flex items-center gap-2 ${
                     activeCategory === cat.id
                       ? 'bg-primary text-background border-primary' :'border-border text-muted-foreground hover:border-primary/50 hover:text-foreground bg-surface/40'
                   }`}

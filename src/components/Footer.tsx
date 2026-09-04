@@ -23,9 +23,9 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="border-t border-border py-10 px-6 md:px-10">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="max-w-7xl mx-auto flex flex-col xl:flex-row items-center justify-between gap-6">
         {/* Logo + Brand */}
-        <Link href="/" className="flex items-center" aria-label="ThriveThroughCancer home">
+        <Link href="/" className="flex min-h-11 items-center" aria-label="ThriveThroughCancer home">
           <AppLogo className="w-[190px]" />
         </Link>
 
@@ -49,17 +49,17 @@ export default function Footer() {
               key={s.name}
               href={s.href}
               aria-label={s.name}
-              className="w-9 h-9 flex items-center justify-center rounded-full border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors duration-200"
+              className="w-11 h-11 flex flex-shrink-0 items-center justify-center rounded-full border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors duration-200"
             >
               <Icon name={s.icon as 'HeartIcon'} size={16} />
             </a>
           ))}
-          <span className="text-sm text-muted-foreground ml-2 hidden md:block">
+          <span className="text-sm text-muted-foreground ml-2 hidden xl:block">
             © 2026 ThriveThroughCancer
           </span>
         </div>
       </div>
-      <p className="text-center text-sm text-muted-foreground mt-4 md:hidden">© 2026 ThriveThroughCancer</p>
+      <p className="text-center text-sm text-muted-foreground mt-4 xl:hidden">© 2026 ThriveThroughCancer</p>
     </footer>
   );
 }

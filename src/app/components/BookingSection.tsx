@@ -208,7 +208,7 @@ export default function BookingSection() {
             <div className="booking-reveal space-y-4" style={{ opacity: 0 }}>
               <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-widest mb-4">
                 CHOOSE YOUR SESSION
-                <span className="block text-xs font-normal italic normal-case tracking-normal mt-1">Fees are in Rands and Dollars, South Africans pay in Rands and rest of the other countries pay Dollar fees</span>
+                <span className="block text-xs font-normal italic normal-case tracking-normal mt-1">Fees are in Rands (ZAR) and US Dollars. South African/African citizens are charged in Rands (ZAR) and all other countries in USD ($).</span>
               </h3>
               {sessionTypes.map((s) =>
               <button

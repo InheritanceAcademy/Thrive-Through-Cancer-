@@ -238,7 +238,9 @@ export default function ServicesPage() {
                     <p className="text-accent text-sm font-medium italic mb-4">{s.subtitle}</p>
                     <p className="text-muted-foreground text-sm font-light leading-relaxed">{s.body}</p>
                   </div>
-                  <div className="flex flex-col sm:flex-row gap-6 mt-auto">
+                  <div className={`flex flex-col gap-6 mt-auto ${
+                    s.span === 'lg:col-span-2' ? 'sm:flex-row' : 'sm:flex-row lg:flex-col 2xl:flex-row'
+                  }`}>
                     <ul className="space-y-2.5 flex-1">
                       {s.features.map((f) =>
                     <li key={f} className="flex items-center gap-3 text-sm text-foreground/80">
@@ -250,7 +252,9 @@ export default function ServicesPage() {
                     )}
                     </ul>
                     {'price' in s && s.price && (
-                      <div className="flex-shrink-0 flex flex-col items-center justify-center bg-primary rounded-2xl px-6 py-5 min-w-[130px] self-start sm:self-center">
+                      <div className={`flex-shrink-0 flex flex-col items-center justify-center bg-primary rounded-2xl px-6 py-5 min-w-[130px] self-start ${
+                        s.span === 'lg:col-span-2' ? 'sm:self-center' : 'sm:self-center lg:self-start 2xl:self-center'
+                      }`}>
                         <span className="text-primary-foreground text-lg font-black leading-tight text-center">{s.price}</span>
                       </div>
                     )}
@@ -261,6 +265,16 @@ export default function ServicesPage() {
                   </Link>
                 </div>
               )}
+            </div>
+
+            {/* Pay what you can afford notice */}
+            <div className="mt-10 rounded-2xl p-6 border border-primary/20 bg-primary/5 flex items-start gap-3">
+              <Icon name="HeartIcon" size={18} className="text-primary flex-shrink-0 mt-0.5" />
+              <p className="text-sm text-foreground/80 font-light leading-relaxed">
+                Fees are in Rands (ZAR) and US Dollars ($). South African/African citizens are charged in Rands (ZAR) and all other countries in USD ($).{' '}
+                We recognise that finances may be one of your concerns on a cancer journey. Do not make financial hardship a barrier to your recovery — speak to us about our{' '}
+                <span className="font-semibold text-primary">&ldquo;Pay What You Can Afford&rdquo;</span> offer. Our goal is to help all in need of our services.
+              </p>
             </div>
           </div>
         </section>
@@ -310,7 +324,7 @@ export default function ServicesPage() {
             <div className="absolute inset-0 hero-scrim" />
             <div className="absolute inset-0 flex items-center justify-center px-6">
               <blockquote className="max-w-3xl text-center">
-                <p className="font-serif text-2xl md:text-4xl font-light italic text-foreground leading-relaxed">
+                <p className="font-serif text-2xl md:text-4xl font-bold italic text-black leading-relaxed">
                   &ldquo;The goal isn&apos;t to get back to who you were before. It&apos;s to discover who you are at the core and who you are becoming.&rdquo;
                 </p>
                 <footer className="mt-6 text-accent text-sm font-semibold tracking-wide">— Renny Letswalo</footer>
