@@ -171,7 +171,37 @@ export default function ServicesSection() {
               
             </div>
             <div className="absolute inset-0 scrim-bottom" />
-            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 z-10">
+            {/* Mobile: top-positioned content over the grey area */}
+            <div className="absolute inset-0 md:hidden z-10 flex flex-col justify-start p-8 pt-10" style={{ background: 'linear-gradient(to bottom, rgba(15,13,11,0.72) 0%, rgba(15,13,11,0.55) 45%, rgba(15,13,11,0.0) 100%)' }}>
+              <span className="inline-block w-fit text-primary bg-primary/20 border border-primary/30 rounded-full px-4 py-1 text-xs font-semibold tracking-widest uppercase mb-4">
+                {featured.tag}
+              </span>
+              <h3 className="font-serif text-3xl font-black text-foreground mb-2">
+                {featured.title}
+              </h3>
+              <p className="font-serif text-lg italic text-accent mb-4">{featured.subtitle}</p>
+              <p className="text-foreground/75 text-sm font-light leading-relaxed max-w-lg mb-8">
+                {featured.description}
+              </p>
+              <div className="flex items-center gap-4 flex-wrap">
+                <a
+                  href="/services"
+                  className="btn-outline text-sm"
+                  aria-label={`Learn more about ${featured.title}`}>
+                  Learn More
+                  <Icon name="ArrowRightIcon" size={16} />
+                </a>
+                <a
+                  href={featured.href}
+                  className="btn-primary text-sm"
+                  aria-label={`${featured.cta} for ${featured.title}`}>
+                  {featured.cta}
+                  <Icon name="ArrowRightIcon" size={16} />
+                </a>
+              </div>
+            </div>
+            {/* Desktop: bottom-positioned content as before */}
+            <div className="hidden md:block absolute bottom-0 left-0 right-0 p-8 md:p-12 z-10">
               <span className="inline-block text-primary bg-primary/20 border border-primary/30 rounded-full px-4 py-1 text-xs font-semibold tracking-widest uppercase mb-4">
                 {featured.tag}
               </span>
