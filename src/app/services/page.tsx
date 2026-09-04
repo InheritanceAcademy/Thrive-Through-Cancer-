@@ -320,7 +320,7 @@ export default function ServicesPage() {
             <div className="absolute inset-0 hero-scrim" />
             <div className="absolute inset-0 flex items-center justify-center px-6">
               <blockquote className="max-w-3xl text-center">
-                <p className="font-serif text-2xl md:text-4xl font-light italic text-foreground leading-relaxed">
+                <p className="font-serif text-2xl md:text-4xl font-bold italic text-black leading-relaxed">
                   &ldquo;The goal isn&apos;t to get back to who you were before. It&apos;s to discover who you are at the core and who you are becoming.&rdquo;
                 </p>
                 <footer className="mt-6 text-accent text-sm font-semibold tracking-wide">— Renny Letswalo</footer>
