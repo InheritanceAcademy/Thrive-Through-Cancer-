@@ -165,13 +165,12 @@ export default function ServicesSection() {
                 src={featured.image}
                 alt={featured.imageAlt}
                 fill
-                className="object-cover"
-                style={{ objectPosition: '50% 30%' }}
+                className="featured-coaching-image object-cover"
                 sizes="(max-width: 768px) 100vw, 66vw" />
               
             </div>
             <div className="absolute inset-0 scrim-bottom" />
-            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 z-10">
+            <div className="absolute top-8 bottom-auto left-0 right-0 p-6 z-10 md:top-auto md:bottom-0 md:p-12">
               <span className="inline-block text-primary bg-primary/20 border border-primary/30 rounded-full px-4 py-1 text-xs font-semibold tracking-widest uppercase mb-4">
                 {featured.tag}
               </span>

@@ -15,7 +15,7 @@ export default function StructuredData() {
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
-      email: 'coaching@thrivethroughcancer.co.za',
+      email: 'hello@thrivethroughcancer.co.za',
       availableLanguage: 'English',
     },
   };

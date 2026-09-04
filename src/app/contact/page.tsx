@@ -360,16 +360,13 @@ export default function ContactPage() {
 
               {/* Contact details */}
               <ul className="space-y-5" aria-label="Contact information">
-                {/* Email .com */}
+                {/* Email */}
                 <li className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <Icon name="EnvelopeIcon" size={18} className="text-primary" />
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground font-semibold tracking-wide uppercase mb-0.5">Email</p>
-                    <a href="mailto:coaching@thrivethroughcancer.co.za" className="text-foreground text-sm font-medium hover:text-primary transition-colors block">
-                      coaching@thrivethroughcancer.co.za
-                    </a>
                     <a href="mailto:hello@thrivethroughcancer.co.za" className="text-foreground text-sm font-medium hover:text-primary transition-colors block">
                       hello@thrivethroughcancer.co.za
                     </a>

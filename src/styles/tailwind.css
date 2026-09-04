@@ -115,6 +115,16 @@
     background: linear-gradient(to top, rgba(250, 246, 240, 0.92) 0%, rgba(250, 246, 240, 0.5) 40%, transparent 100%);
   }
 
+  .featured-coaching-image {
+    object-position: 50% 22%;
+  }
+
+  @media (min-width: 768px) {
+    .featured-coaching-image {
+      object-position: 50% 30%;
+    }
+  }
+
   .scrim-center {
     background: radial-gradient(ellipse at center, rgba(250, 246, 240, 0.6) 0%, transparent 70%);
   }
