@@ -262,6 +262,16 @@ export default function ServicesPage() {
                 </div>
               )}
             </div>
+
+            {/* Pay what you can afford notice */}
+            <div className="mt-10 rounded-2xl p-6 border border-primary/20 bg-primary/5 flex items-start gap-3">
+              <Icon name="HeartIcon" size={18} className="text-primary flex-shrink-0 mt-0.5" />
+              <p className="text-sm text-foreground/80 font-light leading-relaxed">
+                Fees are in Rands (ZAR) and US Dollars ($). South African/African citizens are charged in Rands (ZAR) and all other countries in USD ($).{' '}
+                We recognize that finances may be one of your concerns on a cancer journey. Do not make financial hardship a barrier to your recovery — speak to us about our{' '}
+                <span className="font-semibold text-primary">&ldquo;Pay What You Can Afford&rdquo;</span> offer. Our goal is to help all in need of our services.
+              </p>
+            </div>
           </div>
         </section>
 
