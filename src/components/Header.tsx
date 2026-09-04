@@ -94,7 +94,7 @@ export default function Header() {
         className={`fixed inset-0 z-40 transition-all duration-500 md:hidden ${
         menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`
         }
-        style={{ backdropFilter: 'blur(20px)', background: 'rgba(15,13,11,0.96)' }}
+        style={{ backdropFilter: 'blur(20px)', background: 'rgba(15,13,11,0.95)' }}
         aria-hidden={!menuOpen}>
 
         <nav className="flex flex-col items-center justify-center h-full gap-10 px-8" aria-label="Mobile navigation">
@@ -103,7 +103,7 @@ export default function Header() {
             key={link?.href}
             href={link?.href}
             onClick={handleNavClick}
-            className="font-serif text-3xl font-light italic text-white hover:text-primary transition-colors duration-200">
+            className="font-serif text-3xl font-light italic text-foreground hover:text-primary transition-colors duration-200">
 
               {link?.label}
             </Link>

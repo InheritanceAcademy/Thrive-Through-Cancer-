@@ -367,9 +367,6 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground font-semibold tracking-wide uppercase mb-0.5">Email</p>
-                    <a href="mailto:coaching@thrivethroughcancer.co.za" className="text-foreground text-sm font-medium hover:text-primary transition-colors block">
-                      coaching@thrivethroughcancer.co.za
-                    </a>
                     <a href="mailto:hello@thrivethroughcancer.co.za" className="text-foreground text-sm font-medium hover:text-primary transition-colors block">
                       hello@thrivethroughcancer.co.za
                     </a>
@@ -384,6 +381,14 @@ export default function ContactPage() {
                   <div>
                     <p className="text-xs text-muted-foreground font-semibold tracking-wide uppercase mb-0.5">WhatsApp Messaging</p>
                     <p className="text-foreground text-sm font-medium">International clients welcome</p>
+                    <a
+                      href="https://wa.me/27713519581"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-foreground text-sm font-semibold hover:text-primary transition-colors block mt-1"
+                    >
+                      +27 71 351 9581
+                    </a>
                     <p className="text-xs text-muted-foreground font-light mt-0.5 leading-relaxed">
                       We use WhatsApp messaging to connect across borders — no international call charges, no pressure. Message us whenever you&apos;re ready.
                     </p>
