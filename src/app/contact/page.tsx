@@ -177,7 +177,7 @@ function TimezoneConverter() {
       </div>
 
       <p className="text-xs text-muted-foreground font-light leading-relaxed">
-        These hours are designed to reach across time zones — covering Europe, morning hours across Asia, and early morning on the US East Coast.
+        These hours are designed to reach across time zones — covering Europe, afternoon and evening across Asia and Australia/New Zealand, and early morning on the US East Coast.
       </p>
     </div>
   );
