@@ -687,7 +687,7 @@ export default function ContactPage() {
                         checked={form.consent}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        className={`mt-1 w-4 h-4 accent-primary flex-shrink-0 cursor-pointer ${touched.consent && errors.consent ? 'outline outline-2 outline-red-500 rounded' : ''}`}
+                        className={`mt-0.5 w-6 h-6 accent-primary flex-shrink-0 cursor-pointer ${touched.consent && errors.consent ? 'outline outline-2 outline-red-500 rounded' : ''}`}
                         aria-invalid={touched.consent && !!errors.consent}
                         aria-describedby={touched.consent && errors.consent ? 'consent-error' : undefined}
                       />

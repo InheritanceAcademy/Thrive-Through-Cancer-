@@ -180,7 +180,7 @@ function StoryCard({ story }: { story: Story }) {
         {isLong && (
           <button
             onClick={() => setExpanded((v) => !v)}
-            className="self-start flex items-center gap-2 text-primary text-xs font-semibold tracking-wide hover:gap-3 transition-all duration-200 group/btn"
+            className="self-start flex min-h-11 items-center gap-2 text-primary text-xs font-semibold tracking-wide hover:gap-3 transition-all duration-200 group/btn"
             aria-expanded={expanded}
           >
             {expanded ? 'Show less' : 'Read full story'}
@@ -244,7 +244,7 @@ export default function StoriesPage() {
         </section>
 
         {/* Filters */}
-        <section className="py-8 px-6 md:px-10 border-b border-border bg-card/40 sticky top-[72px] z-30 backdrop-blur-md" aria-label="Filter stories">
+        <section className="py-8 px-6 md:px-10 border-b border-border bg-card/40 md:sticky md:top-20 z-30 backdrop-blur-md" aria-label="Filter stories">
           <div className="max-w-7xl mx-auto flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
             <div className="flex flex-wrap gap-3">
               {/* Condition filter */}
@@ -255,7 +255,7 @@ export default function StoriesPage() {
                     <button
                       key={c}
                       onClick={() => setConditionFilter(c)}
-                      className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${
+                      className={`min-h-11 px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${
                         conditionFilter === c
                           ? 'bg-primary text-primary-foreground shadow-sm'
                           : 'bg-background border border-border text-muted-foreground hover:border-primary/50 hover:text-foreground'
@@ -277,7 +277,7 @@ export default function StoriesPage() {
                     <button
                       key={l}
                       onClick={() => setLocationFilter(l)}
-                      className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${
+                      className={`min-h-11 px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${
                         locationFilter === l
                           ? 'bg-primary text-primary-foreground shadow-sm'
                           : 'bg-background border border-border text-muted-foreground hover:border-primary/50 hover:text-foreground'
@@ -293,7 +293,7 @@ export default function StoriesPage() {
               {activeFilters && (
                 <button
                   onClick={() => { setConditionFilter('All Conditions'); setLocationFilter('All Locations'); }}
-                  className="text-xs text-muted-foreground hover:text-primary transition-colors duration-200 underline underline-offset-2"
+                  className="flex min-h-11 items-center text-xs text-muted-foreground hover:text-primary transition-colors duration-200 underline underline-offset-2"
                 >
                   Clear filters
                 </button>
@@ -329,7 +329,7 @@ export default function StoriesPage() {
                 <p className="text-muted-foreground text-lg mb-4">No stories match your current filters.</p>
                 <button
                   onClick={() => { setConditionFilter('All Conditions'); setLocationFilter('All Locations'); }}
-                  className="text-primary font-semibold text-sm hover:underline"
+                  className="min-h-11 text-primary font-semibold text-sm hover:underline"
                 >
                   Clear all filters
                 </button>

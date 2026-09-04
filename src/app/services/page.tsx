@@ -238,7 +238,9 @@ export default function ServicesPage() {
                     <p className="text-accent text-sm font-medium italic mb-4">{s.subtitle}</p>
                     <p className="text-muted-foreground text-sm font-light leading-relaxed">{s.body}</p>
                   </div>
-                  <div className="flex flex-col sm:flex-row gap-6 mt-auto">
+                  <div className={`flex flex-col gap-6 mt-auto ${
+                    s.span === 'lg:col-span-2' ? 'sm:flex-row' : 'sm:flex-row lg:flex-col 2xl:flex-row'
+                  }`}>
                     <ul className="space-y-2.5 flex-1">
                       {s.features.map((f) =>
                     <li key={f} className="flex items-center gap-3 text-sm text-foreground/80">
@@ -250,7 +252,9 @@ export default function ServicesPage() {
                     )}
                     </ul>
                     {'price' in s && s.price && (
-                      <div className="flex-shrink-0 flex flex-col items-center justify-center bg-primary rounded-2xl px-6 py-5 min-w-[130px] self-start sm:self-center">
+                      <div className={`flex-shrink-0 flex flex-col items-center justify-center bg-primary rounded-2xl px-6 py-5 min-w-[130px] self-start ${
+                        s.span === 'lg:col-span-2' ? 'sm:self-center' : 'sm:self-center lg:self-start 2xl:self-center'
+                      }`}>
                         <span className="text-primary-foreground text-lg font-black leading-tight text-center">{s.price}</span>
                       </div>
                     )}
