@@ -129,9 +129,9 @@ const stories: Story[] = [
     location: 'Johannesburg, South Africa',
     locationTag: 'South Africa',
     quote:
-      '"Renny\'s coaching gave me the strength and guidance I needed to navigate my breast cancer journey with hope and resilience."',
+      '"Being diagnosed with cancer put me on a path of so much confusion in making the right decisions, Renny patiently guided my steps and showing me how important emotional and spiritual well-being is in this journey, finding root causes and addressing it. It has changed so much for me and directed my decisions in a time of overwhelm and confusion. Thank you, Renny!"',
     fullStory:
-      '"Renny\'s coaching gave me the strength and guidance I needed to navigate my breast cancer journey with hope and resilience."',
+      '"Being diagnosed with cancer put me on a path of so much confusion in making the right decisions, Renny patiently guided my steps and showing me how important emotional and spiritual well-being is in this journey, finding root causes and addressing it. It has changed so much for me and directed my decisions in a time of overwhelm and confusion. Thank you, Renny!"',
     image: '/assets/images/no_image.png',
     imageAlt:
       'Maretha, South African woman, breast cancer survivor from Johannesburg, South Africa',
