@@ -135,6 +135,7 @@ const stories: Story[] = [
     image: '/assets/images/maretha_testimonial.png',
     imageAlt:
       'Maretha, white middle-aged woman in her 60s, breast cancer survivor from Johannesburg, South Africa',
+    outcome: 'From Confusion and Overwhelm to Clarity',
   },
 ];
 
