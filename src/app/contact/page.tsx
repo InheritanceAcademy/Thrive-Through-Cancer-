@@ -34,9 +34,7 @@ interface TouchedFields {
 
 const subjects = [
   'Individual Coaching',
-  'Group Circles',
   'Caregiver Support',
-  'Wellness Intensive',
   'General Enquiry',
   'Media / Speaking',
 ];
@@ -114,7 +112,8 @@ function TimezoneConverter() {
       const lDisplay = (lH === 0 ? 12 : lH > 12 ? lH - 12 : lH);
       setCurrentLocalTime(`${lDisplay}:${lM}${lAmPm}`);
 
-      setIsOpen(sastH >= OPEN_HOUR_SAST && sastH < CLOSE_HOUR_SAST);
+      const sastDay = sastDate.getDay(); // 0 = Sunday, 6 = Saturday
+      setIsOpen(sastDay !== 0 && sastDay !== 6 && sastH >= OPEN_HOUR_SAST && sastH < CLOSE_HOUR_SAST);
     };
     update();
     const interval = setInterval(update, 30000);

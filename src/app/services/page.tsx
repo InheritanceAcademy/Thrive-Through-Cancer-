@@ -118,7 +118,7 @@ const faqs = [
 },
 {
   q: 'Do you work with all cancer types?',
-  a: 'Yes. Renny has experience across breast, colorectal, Small Intestine cancer, renal carcinoma, and many other cancer types, as well as rare diagnoses. For Psycho-Oncology Coaching, the specialty of cancer is not a factor — the focus is not on the type of cancer but on the whole person\'s wellbeing.'
+  a: 'Yes. Renny has experience across breast, colorectal, small intestine cancer, renal carcinoma, and many other cancer types, as well as rare diagnoses. For Psycho-Oncology Coaching, the specialty of cancer is not a factor — the focus is not on the type of cancer but on the whole person\'s wellbeing.'
 },
 {
   q: 'Is coaching covered by insurance?',

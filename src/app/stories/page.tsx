@@ -121,6 +121,22 @@ const stories: Story[] = [
       'Janet K, American woman with a joyful, relieved expression, breast cancer survivor from Chicago',
     outcome: 'No cancer found at surgery',
   },
+  {
+    id: 7,
+    name: 'Maretha',
+    condition: 'Breast Cancer',
+    conditionTag: 'Breast Cancer',
+    location: 'Johannesburg, South Africa',
+    locationTag: 'South Africa',
+    quote:
+      '"Being diagnosed with cancer put me on a path of so much confusion in making the right decisions, Renny patiently guided my steps and showing me how important emotional and spiritual well-being is in this journey, finding root causes and addressing it. It has changed so much for me and directed my decisions in a time of overwhelm and confusion. Thank you, Renny!"',
+    fullStory:
+      '"Being diagnosed with cancer put me on a path of so much confusion in making the right decisions, Renny patiently guided my steps and showing me how important emotional and spiritual well-being is in this journey, finding root causes and addressing it. It has changed so much for me and directed my decisions in a time of overwhelm and confusion. Thank you, Renny!"',
+    image: '/assets/images/maretha_testimonial.png',
+    imageAlt:
+      'Maretha, white middle-aged woman in her 60s, breast cancer survivor from Johannesburg, South Africa',
+    outcome: 'From Confusion and Overwhelm to Clarity',
+  },
 ];
 
 const CONDITIONS = ['All Conditions', 'Breast Cancer', 'Renal Cancer', 'Caregiver'];
