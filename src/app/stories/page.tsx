@@ -121,6 +121,21 @@ const stories: Story[] = [
       'Janet K, American woman with a joyful, relieved expression, breast cancer survivor from Chicago',
     outcome: 'No cancer found at surgery',
   },
+  {
+    id: 7,
+    name: 'Maretha',
+    condition: 'Breast Cancer',
+    conditionTag: 'Breast Cancer',
+    location: 'Johannesburg, South Africa',
+    locationTag: 'South Africa',
+    quote:
+      '"Renny\'s coaching gave me the strength and guidance I needed to navigate my breast cancer journey with hope and resilience."',
+    fullStory:
+      '"Renny\'s coaching gave me the strength and guidance I needed to navigate my breast cancer journey with hope and resilience."',
+    image: '/assets/images/no_image.png',
+    imageAlt:
+      'Maretha, South African woman, breast cancer survivor from Johannesburg, South Africa',
+  },
 ];
 
 const CONDITIONS = ['All Conditions', 'Breast Cancer', 'Renal Cancer', 'Caregiver'];
